@@ -11,7 +11,7 @@ Just download the git repository and keep the files. You only need python3
 ```python
  python3 main.py
 ```
- the game will directly start by asking you to input a letter, after that they check if the letter was good or not. You only have 5 chance to find the word be careful
+ the game will directly start by asking you to input a letter, after that they check if the letter was good or not. You only have 6 chance to find the word be careful
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

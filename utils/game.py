@@ -1,5 +1,6 @@
 
 from curses.ascii import isalpha
+from .hangman_pics import HANGMANPICS
 
 class Hangman :
     possible_words = ['becode', 'learning', 'mathematics', 'sessions']   
@@ -9,7 +10,7 @@ class Hangman :
             :param number_two: a random number who gonna be use for choise a word to find
         '''
         self.word_to_find = Hangman.possible_words[i].upper()
-        self.live = 5
+        self.live = 6
         self.correctly_guessed_letters :List[str] = []
         for i in self.word_to_find:
             self.correctly_guessed_letters.append('_')
@@ -38,6 +39,8 @@ class Hangman :
         '''
             the player is dead :(
         '''
+        print("he's Dead")
+        print(HANGMANPICS[self.error_count])
         print(f"game over ... The word was {self.word_to_find}")
     
     def well_played(self):
@@ -51,6 +54,7 @@ class Hangman :
             Function that will print the result of each turn
         '''
         print(f"REMAINING LIFE : {self.live} TURN : {self.turn_count} ERROR : {self.error_count}")
+        print(HANGMANPICS[self.error_count])
         print(" ".join(self.correctly_guessed_letters))
         print(" ".join(self.wrongly_guessed_letters)) if len(self.wrongly_guessed_letters) else print(end="")
         print("-"*100)   
