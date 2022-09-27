@@ -30,10 +30,12 @@ class Hangman :
             return
         self.live -= 1
         self.error_count += 1
-        if self.letter.isalpha() or len(self.letter) != 1:
+        if self.letter in self.wrongly_guessed_letters or self.letter in self.correctly_guessed_letters:
+            print("You're already chose this letter, -1 life")
+        elif self.letter.isalpha() or len(self.letter) != 1:
             self.wrongly_guessed_letters.append(self.letter)  
         else:
-            print("i said a letter !!")
+            print("i said a letter !! -1 life")
                 
     def game_over(self):
         '''
